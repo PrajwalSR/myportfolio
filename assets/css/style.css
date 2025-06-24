@@ -588,7 +588,7 @@ main {
   top: 0;
   left: 0;
   transform: translate(15px, -25px);
-  background: var(--bg-gradient-onyx);
+  /* background: var(--bg-gradient-onyx); */
   border-radius: 14px;
   box-shadow: var(--shadow-1);
 }
@@ -676,9 +676,9 @@ main {
 
 .modal-close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: var(--onyx);
+  top: 5px;
+  right: 5px;
+  /* background: var(--onyx); */
   border-radius: 8px;
   width: 32px;
   height: 32px;
@@ -696,16 +696,16 @@ main {
 .modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
 
 .modal-avatar-box {
-  background: var(--bg-gradient-onyx);
+  /* background: var(--bg-gradient-onyx); */
   width: max-content;
   border-radius: 14px;
   margin-bottom: 15px;
-  box-shadow: var(--shadow-2);
+  /* box-shadow: var(--shadow-2); */
 }
 
 .modal-img-wrapper > img { display: none; }
 
-.modal-title { margin-bottom: 4px; }
+.modal-title { margin-bottom: 10px; }
 
 .modal-content time {
   font-size: var(--fs-6);
@@ -725,36 +725,34 @@ main {
 /**
  * #clients 
  */
-
-.clients { margin-bottom: 15px; }
-
+ .clients-title {
+  margin: 16px; 
+}
+/* 1) Outline the container in red so you can see its exact width + padding */
 .clients-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+  /* outline: 2px dashed red !important; */
+  margin: 0 !important;       /* kill any UL margins */
+  padding: 0 !important;      /* kill any UL padding */
+  display: flex !important;
+  gap: 4px !important;        /* you should see 4px between each item */
+  overflow-x: auto !important;
 }
 
+/* 2) Outline each slide in blue so you can see their exact boxes */
 .clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
+  /* outline: 2px dotted blue !important; */
+  margin: 0 !important;       /* no stray margins */
+  flex: 0 0 auto !important;  /* size to content only */
+  width: 80px !important;
 }
 
+/* 3) Force the image to fill that 80px exactly */
 .clients-item img {
-  width: 100%;
-  filter: grayscale(1);
-  transition: var(--transition-1);
+  display: block !important;
+  width: 80% !important;
+  height: auto !important;
+  margin-bottom: 40px;
 }
-
-.clients-item img:hover { filter: grayscale(0); }
 
 
 
